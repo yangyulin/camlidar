@@ -1,5 +1,0 @@
-/home/linde/data/Project/camlidar/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/linde/data/Project/camlidar/cmake-build-debug/CMakeFiles/imgrect_3p.dir
-/home/linde/data/Project/camlidar/cmake-build-debug/CMakeFiles/imgrect_vi.dir
-/home/linde/data/Project/camlidar/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/linde/data/Project/camlidar/cmake-build-debug/CMakeFiles/imgrect_zjudata.dir
