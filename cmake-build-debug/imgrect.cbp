@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="imgrect"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cmake_modules\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\share\;CMake Files\..\..\..\..\usr\local\share\OpenCV\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/linde/project/imgrect/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="imgrect_vi">
+				<Option output="/home/linde/project/imgrect/cmake-build-debug/imgrect_vi" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/linde/project/imgrect/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/suitesparse"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/include/opencv"/>
+					<Add directory="/usr/local/include/eigen3"/>
+					<Add directory="/home/linde/project/imgrect/thirdparty"/>
+					<Add directory="/home/linde/project/imgrect/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 imgrect_vi"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="imgrect_vi/fast">
+				<Option output="/home/linde/project/imgrect/cmake-build-debug/imgrect_vi" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/linde/project/imgrect/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/suitesparse"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/include/opencv"/>
+					<Add directory="/usr/local/include/eigen3"/>
+					<Add directory="/home/linde/project/imgrect/thirdparty"/>
+					<Add directory="/home/linde/project/imgrect/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 imgrect_vi/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/linde/project/imgrect/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="imgrect_zjudata">
+				<Option output="/home/linde/project/imgrect/cmake-build-debug/imgrect_zjudata" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/linde/project/imgrect/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/suitesparse"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/include/opencv"/>
+					<Add directory="/usr/local/include/eigen3"/>
+					<Add directory="/home/linde/project/imgrect/thirdparty"/>
+					<Add directory="/home/linde/project/imgrect/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 imgrect_zjudata"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="imgrect_zjudata/fast">
+				<Option output="/home/linde/project/imgrect/cmake-build-debug/imgrect_zjudata" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/linde/project/imgrect/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/suitesparse"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/include/opencv"/>
+					<Add directory="/usr/local/include/eigen3"/>
+					<Add directory="/home/linde/project/imgrect/thirdparty"/>
+					<Add directory="/home/linde/project/imgrect/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 imgrect_zjudata/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/linde/project/imgrect/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="imgrect_3p">
+				<Option output="/home/linde/project/imgrect/cmake-build-debug/imgrect_3p" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/linde/project/imgrect/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/suitesparse"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/include/opencv"/>
+					<Add directory="/usr/local/include/eigen3"/>
+					<Add directory="/home/linde/project/imgrect/thirdparty"/>
+					<Add directory="/home/linde/project/imgrect/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 imgrect_3p"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="imgrect_3p/fast">
+				<Option output="/home/linde/project/imgrect/cmake-build-debug/imgrect_3p" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/linde/project/imgrect/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/suitesparse"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/include/opencv"/>
+					<Add directory="/usr/local/include/eigen3"/>
+					<Add directory="/home/linde/project/imgrect/thirdparty"/>
+					<Add directory="/home/linde/project/imgrect/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 imgrect_3p/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="imgrect_waterloo">
+				<Option output="/home/linde/project/imgrect/cmake-build-debug/imgrect_waterloo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/linde/project/imgrect/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/suitesparse"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/include/opencv"/>
+					<Add directory="/usr/local/include/eigen3"/>
+					<Add directory="/home/linde/project/imgrect/thirdparty"/>
+					<Add directory="/home/linde/project/imgrect/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 imgrect_waterloo"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="imgrect_waterloo/fast">
+				<Option output="/home/linde/project/imgrect/cmake-build-debug/imgrect_waterloo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/linde/project/imgrect/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/suitesparse"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/include/opencv"/>
+					<Add directory="/usr/local/include/eigen3"/>
+					<Add directory="/home/linde/project/imgrect/thirdparty"/>
+					<Add directory="/home/linde/project/imgrect/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 imgrect_waterloo/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="imgrect_zed">
+				<Option output="/home/linde/project/imgrect/cmake-build-debug/imgrect_zed" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/linde/project/imgrect/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/suitesparse"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/include/opencv"/>
+					<Add directory="/usr/local/include/eigen3"/>
+					<Add directory="/home/linde/project/imgrect/thirdparty"/>
+					<Add directory="/home/linde/project/imgrect/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 imgrect_zed"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="imgrect_zed/fast">
+				<Option output="/home/linde/project/imgrect/cmake-build-debug/imgrect_zed" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/linde/project/imgrect/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/suitesparse"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/include/opencv"/>
+					<Add directory="/usr/local/include/eigen3"/>
+					<Add directory="/home/linde/project/imgrect/thirdparty"/>
+					<Add directory="/home/linde/project/imgrect/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 imgrect_zed/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/linde/project/imgrect/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/linde/project/imgrect/src/imgrect_3p.cpp">
+			<Option target="imgrect_3p"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/src/imgrect_vi.cpp">
+			<Option target="imgrect_vi"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/src/imgrect_waterloo.cpp">
+			<Option target="imgrect_waterloo"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/src/imgrect_zed.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/src/imgrect_zjudata.cpp">
+			<Option target="imgrect_zjudata"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/binary.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/binary.h">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/contrib/graphbuilder.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/contrib/graphbuilder.h">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/contrib/graphbuilderadapter.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/contrib/graphbuilderadapter.h">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/convert.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/directives.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/directives.h">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/emit.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/emitfromevents.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/emitfromevents.h">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/emitter.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/emitter.h">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/emitterstate.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/emitterstate.h">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/emitterutils.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/emitterutils.h">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/exp.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/exp.h">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/memory.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/node.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/node_data.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/nodebuilder.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/nodebuilder.h">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/nodeevents.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/nodeevents.h">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/null.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/null.h">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/ostream_wrapper.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/ostream_wrapper.h">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/parse.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/parser.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/parser.h">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/regex_yaml.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/regex_yaml.h">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/scanner.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/scanner.h">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/scanscalar.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/scanscalar.h">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/scantag.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/scantag.h">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/scantoken.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/simplekey.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/singledocparser.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/singledocparser.h">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/stream.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/stream.h">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/tag.cpp">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/thirdparty/yaml-cpp/tag.h">
+			<Option target="imgrect_zed"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/cmake_modules/FindG2O.cmake">
+			<Option virtualFolder="CMake Files\cmake_modules\"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/cmake_modules/FindSuiteSparse.cmake">
+			<Option virtualFolder="CMake Files\cmake_modules\"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/cmake_modules/FindEigen3.cmake">
+			<Option virtualFolder="CMake Files\cmake_modules\"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/../../../../usr/local/share/OpenCV/OpenCVConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\share\OpenCV\"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/../../../../usr/local/share/OpenCV/OpenCVConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\share\OpenCV\"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/../../../../usr/local/share/OpenCV/OpenCVModules.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\share\OpenCV\"/>
+		</Unit>
+		<Unit filename="/home/linde/project/imgrect/../../../../usr/local/share/OpenCV/OpenCVModules-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\share\OpenCV\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

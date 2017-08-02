@@ -1,2 +1,3 @@
 # camlidar
-Stereo and LiDAR calibration
+
+Stereo Cam and LiDAR calibration
