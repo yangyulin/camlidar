@@ -4,6 +4,7 @@ PROJECT(camlidar)
 SET(CMAKE_MODULE_PATH  ${PROJECT_SOURCE_DIR}/cmake_modules)
 find_package(G2O REQUIRED)
 find_package(OpenCV 3 REQUIRED)
+find_package(GTSAM REQUIRED)
 find_package(SuiteSparse REQUIRED)
 find_package(Eigen3 REQUIRED)
 find_package(PCL 1.8 REQUIRED)
@@ -25,6 +26,11 @@ endif()
 
 file(GLOB_RECURSE thirdparty_sources thirdparty/yaml-cpp/*.cpp)
 
+set(sources_factor
+        src/factor/*.cpp)
+set(sources_dataprocess
+        src/dataprocess/*.cpp)
+
 INCLUDE_DIRECTORIES(${CHOLMOD_INCLUDE_DIR}
                     ${CSPARSE_INCLUDE_DIR}
                     ${OpenCV_INCLUDE_DIRS}
@@ -37,6 +43,26 @@ INCLUDE_DIRECTORIES(${CHOLMOD_INCLUDE_DIR}
                     thirdparty
 				    src
                     include)
+
+ADD_EXECUTABLE( main_camlidar
+        src/main_camlidar.cpp src/dataprocess/initData.h src/dataprocess/initData.cpp src/dataprocess/imgRect.h src/dataprocess/imgRect.cpp)
+
+TARGET_LINK_LIBRARIES(  main_camlidar
+        gtsam
+        tbb
+        tbbmalloc
+        X11
+        GL
+        ${PCL_LIBRARIES}
+        ${GTSAM_LIBS}
+        ${OpenCV_LIBS}
+        ${G2O_LIBRARIES}
+        ${Boost_LIBRARIES}
+        csparse
+        cxsparse)
+
+
+
 
 ADD_EXECUTABLE( imgrect_zjudata
                 src/imgrect_zjudata.cpp )
@@ -67,3 +93,20 @@ TARGET_LINK_LIBRARIES(  imgrect_3p
                         ${Boost_LIBRARIES}
                         csparse
                         cxsparse)
+
+ADD_EXECUTABLE( main_gtsam
+        src/main_gtsam.cpp)
+
+TARGET_LINK_LIBRARIES(  main_gtsam
+        gtsam
+        tbb
+        tbbmalloc
+        X11
+        GL
+        ${PCL_LIBRARIES}
+        ${GTSAM_LIBS}
+        ${OpenCV_LIBS}
+        ${G2O_LIBRARIES}
+        ${Boost_LIBRARIES}
+        csparse
+        cxsparse)

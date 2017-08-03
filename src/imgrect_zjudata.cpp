@@ -24,7 +24,7 @@ using namespace std;
 
 int main( int argc, char** argv ){
 
-    string dir = "/home/linde/project/imgrect/data/zjudata/";
+    string dir = "/home/linde/data/Project/camlidar/data/zjudata/";
 
     namedWindow("Vision Before Rectification");
     namedWindow("Vision After Rectification");
@@ -94,7 +94,7 @@ int main( int argc, char** argv ){
         cv::Size sz2 = matRrect.size();
 
         // Create the combined matrix
-        cv::Mat im4(sz1.height, sz1.width+sz2.width+1, CV_8UC1);
+        cv::Mat im4(sz1.height, sz1.width+sz2.width, CV_8UC1);
 
         cv::Mat left1(im4, cv::Rect(0, 0, sz1.width, sz1.height));
         img1.copyTo(left1);

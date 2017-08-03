@@ -1,0 +1,51 @@
+%YAML:1.0
+R_I_L_init: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [0.000000, 0.000000, 1.000000, 0.000000, 1.000000, 0.000000, -1.000000, 0.000000, 0.000000]
+P_I_L_init: !!opencv-matrix
+  rows: 3
+  cols: 1
+  dt: d
+  data: [0.160000, 0.000000, 0.015000]
+R_I_C_vi_init: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [0.000000, -1.000000, 0.000000, -1.000000, 0.000000,  0.000000, 0.000000, 0.000000, -1.000000]
+P_I_C_vi_init: !!opencv-matrix
+  rows: 3
+  cols: 1
+  dt: d
+  data: [0.000000, 0.050000, 0.000000]
+R_I_C_zed_init: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [0.000000, -1.000000, 0.000000, -1.000000, 0.000000,  0.000000, 0.000000, 0.000000, -1.000000]
+P_I_C_zed_init: !!opencv-matrix
+  rows: 3
+  cols: 1
+  dt: d
+  data: [0.035000, 0.060000, 0.015000]
+R_C_zed_L_init: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [0.000000, -1.000000, 0.000000, 0.000000, 0.000000, -1.000000, 1.000000, 0.000000, 0.000000]
+P_C_zed_L_init: !!opencv-matrix
+  rows: 3
+  cols: 1
+  dt: d
+  data: [0.060000, -0.125000, 0.000000]
+R_C_vi_L_init: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [0.000000, -1.000000, 0.000000, 0.000000, 0.000000, -1.000000, 1.000000, 0.000000, 0.000000]
+P_C_vi_L_init: !!opencv-matrix
+  rows: 3
+  cols: 1
+  dt: d
+  data: [0.050000, -0.160000, -0.015000]

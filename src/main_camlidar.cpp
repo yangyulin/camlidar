@@ -1,14 +1,9 @@
 //
-// Created by linde on 8/2/17.
+// Created by linde on 8/3/17.
 //
 
-
-#include <opencv2/core/core.hpp>
-#include <opencv2/imgcodecs.hpp>
-#include <opencv2/highgui.hpp>
-#include <opencv2/imgproc.hpp>
-
-#include <iostream>
+#include "dataprocess/initData.h"
+#include "dataprocess/imgRect.h"
 
 using namespace cv;
 using namespace std;
@@ -20,8 +15,33 @@ using namespace std;
 
 int main( int argc, char** argv ){
 
-    string dir = "/home/linde/data/Project/camlidar/data/3plane2/";
+    string dir = "/home/linde/data/Project/camlidar/data/3plane2";
+    CL::fileReader fReader(dir);
 
+    string imgNameL = dir + "/" + "left-0000.JPG";
+    string imgNameR = dir + "/" + "right-0000.JPG";
+
+    cv::Mat matLrect, matRrect;
+    matLrect = CL::imageRect(imgNameL,
+                             fReader.get_K_0(),
+                             fReader.get_D_0(),
+                             fReader.get_R_rect0(),
+                             fReader.get_P_rect0(),
+                             fReader.get_S_rect0());
+    matRrect = CL::imageRect(imgNameR,
+                             fReader.get_K_1(),
+                             fReader.get_D_1(),
+                             fReader.get_R_rect0(),
+                             fReader.get_P_rect1(),
+                             fReader.get_S_rect1());
+
+    CL::showRect(imgNameL, imgNameR, matLrect, matRrect, true);
+
+
+
+
+
+    /*
     namedWindow("Vision Before Rectification");
     namedWindow("Vision After Rectification");
 
@@ -60,13 +80,13 @@ int main( int argc, char** argv ){
     Size S_rect2(cols_R,rows_R);
 
 
-    for(int i = 0; i < 1; i++){
+    for(int i = 0; i < 47; i++){
 
-        cout<<"the "<<i<<" image"<<endl;
+        cout<<"the "<<i<<" iamge"<<endl;
 
         //input file names
         char base_name[256];
-        sprintf(base_name, "%04d.JPG",i);
+        sprintf(base_name, "%04d.png",i);
         string filename1 = dir + "left-" + base_name;
         string filename2 = dir + "right-" + base_name;
 
@@ -122,48 +142,8 @@ int main( int argc, char** argv ){
         matR1.release();
         matR2.release();
 
-    }
+    }*/
 
 
     return 0;
 }
-
-//hard-coded configuration data
-/*
-Mat K_1 = (Mat_<double>(3,3) << 652.391460, 0.000000, 457.341596,
-                                0.000000, 652.071465, 325.524184,
-                                0.000000, 0.000000, 1.000000);
-
-Mat D_1 = (Mat_<double>(1,5) << -0.213114, 0.069305, 0.000911, 0.000970, 0.000000);
-
-Mat R_rect1 = (Mat_<double>(3,3) << 0.997430, 0.004947, -0.071473,
-                                    -0.004523, 0.999971, 0.006096,
-                                    0.071501, -0.005757, 0.997424);
-
-Mat P_rect1 = (Mat_<double>(3,4) << 642.715797, 0.000000, 486.408535, 0.000000,
-                                    0.000000, 642.715797, 316.962208, 0.000000,
-                                    0.000000, 0.000000, 1.000000, 0.000000);
-
-Mat K_2 = (Mat_<double>(3,3) << 655.781575, 0.000000, 452.371020,
-                                0.000000, 655.569496, 306.659392,
-                                0.000000, 0.000000, 1.000000);
-
-
-
-Mat R_rect2 = (Mat_<double>(3,3) << 0.999914, 0.012610, 0.003556,
-                                    -0.012589, 0.999903, -0.005953,
-                                    -0.003631, 0.005907, 0.999976);
-
-
-
-Mat P_rect2 = (Mat_<double>(3,4) << 642.715797, 0.000000, 486.408535, -647.671716,
-                                    0.000000, 642.715797, 316.962208, 0.000000,
-                                    0.000000, 0.000000, 1.000000, 0.000000);
-
-
-Mat D_2 = (Mat_<double>(1,5) << -0.230124, 0.103053, -0.000446, -0.001376, 0.000000);
-
-
-double cols = 900;
-double rows = 600;
- */

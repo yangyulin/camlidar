@@ -28,7 +28,7 @@ using namespace std;
 
 int main( int argc, char** argv ){
 
-    string dir = "/home/linde/project/imgrect/data/visensor/";
+    string dir = "/home/linde/data/Project/camlidar/data/visensor/";
 
     namedWindow("Vision Before Rectification");
     namedWindow("Vision After Rectification");
