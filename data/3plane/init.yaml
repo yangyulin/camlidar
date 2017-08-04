@@ -50,7 +50,7 @@ P_C_vi_L_init: !!opencv-matrix
   dt: d
   data: [0.050000, -0.160000, -0.015000]
 Target1_width: 7
-Target1_height: 5
+Target1_height: 6
 Target2_width: 7
 Target2_height: 6
 Target3_width: 7

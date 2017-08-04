@@ -46,6 +46,19 @@ cv::Size fileReader::get_S_rect1() {
     return S_rect1;
 }
 
+cv::Size fileReader::get_patternSize1() {
+    return patternSize1;
+}
+
+cv::Size fileReader::get_patternSize2() {
+    return patternSize2;
+}
+
+cv::Size fileReader::get_patternSize3() {
+    return patternSize3;
+}
+
+
 Eigen::Matrix<double, 3, 3> fileReader::get_R_I_L_init() {
     return R_I_L_init;
 }
@@ -147,6 +160,24 @@ fileReader::fileReader(std::string dataDir) {
     dataCalibRight["distortion_coefficients"] >> D_1;
     dataCalibRight["rectification_matrix"] >> R_rect1;
     dataCalibRight["projection_matrix"] >> P_rect1;
+
+
+    // read the pattern size
+    int width1 = dataInit["Target1_width"];
+    int height1 = dataInit["Target1_height"];
+    patternSize1.width = width1;
+    patternSize1.height = height1;
+
+    int width2 = dataInit["Target2_width"];
+    int height2 = dataInit["Target2_height"];
+    patternSize2.width = width2;
+    patternSize2.height = height2;
+
+    int width3 = dataInit["Target3_width"];
+    int height3 = dataInit["Target3_height"];
+    patternSize3.width = width3;
+    patternSize3.height = height3;
+
 
     // read the init data file
     dataInit["R_I_L_init"] >> R_I_L_init_Mat;

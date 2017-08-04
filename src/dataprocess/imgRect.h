@@ -5,6 +5,7 @@
 #ifndef CAMLIDAR_IMGRECT_H
 #define CAMLIDAR_IMGRECT_H
 
+#include <gtsam/geometry/StereoPoint2.h>
 #include "initData.h"
 
 using namespace std;
@@ -25,10 +26,21 @@ namespace CL{
                          cv::Mat matRrect,
                          bool SHOW_RAW);
 
-        std::vector<cv::Point2f> detectChessboard3(cv::Mat matrect,
-                                                  cv::Size patternSize1,
-                                                  cv::Size patternSize2,
-                                                  cv::Size PatternSize3);
+        std::vector<gtsam::StereoPoint2> detectChessboard( cv::Mat matLrect,
+                                                            cv::Mat matRrect,
+                                                            cv::Size patternSize1,
+                                                            cv::Size patternSize2,
+                                                            cv::Size PatternSize3);
+
+        std::vector<gtsam::StereoPoint2> detectChessboard1(cv::Mat matLrect,
+                                                            cv::Mat matRrect,
+                                                            cv::Size patternSize1);
+        std::vector<gtsam::StereoPoint2> detectChessboard2(cv::Mat matLrect,
+                                                            cv::Mat matRrect,
+                                                            cv::Size patternSize2);
+        std::vector<gtsam::StereoPoint2> detectChessboard3(cv::Mat matLrect,
+                                                            cv::Mat matRrect,
+                                                            cv::Size patternSize3);
 
 };
 

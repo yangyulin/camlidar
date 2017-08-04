@@ -42,6 +42,8 @@ namespace CL{
 
         cv::Size S_rect0, S_rect1;
 
+        cv::Size patternSize1, patternSize2, patternSize3;
+
         /// the extrinsic calbration init in Mat formate
 
         cv::Mat R_I_L_init_Mat, P_I_L_init_Mat;
@@ -86,6 +88,10 @@ namespace CL{
 
         cv::Size get_S_rect0();
         cv::Size get_S_rect1();
+
+        cv::Size get_patternSize1();
+        cv::Size get_patternSize2();
+        cv::Size get_patternSize3();
 
         Eigen::Matrix<double, 3, 3> get_R_I_L_init();
         Eigen::Matrix<double, 3, 1> get_P_I_L_init();
