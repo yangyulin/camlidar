@@ -36,7 +36,9 @@ int main( int argc, char** argv ){
     std::vector<gtsam::StereoPoint2> chessCorner2 = CL::detectChessboard2(matLrect, matRrect,
                                                               fReader.get_patternSize2());
     std::vector<gtsam::StereoPoint2> chessCorner3 = CL::detectChessboard3(matLrect, matRrect,
-                                                                          fReader.get_patternSize3());
+                                                              fReader.get_patternSize3());
+
+
 
     // check the detection
     std::cout<<"Chessboard 1: "<<std::endl;

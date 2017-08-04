@@ -30,11 +30,41 @@
 #include <opencv2/imgproc.hpp>
 #include <opencv/cxeigen.hpp>
 #include <opencv2/core/eigen.hpp>
+#include <opencv/cv.hpp>
 
 using namespace std;
 using namespace gtsam;
 
 int main(int argc, char** argv){
+
+    /// test the affine3D
+    std::vector<cv::Point3f> src;
+    cv::Point3f pt1(1,0, 0);
+    cv::Point3f pt2(0,1, 0);
+    cv::Point3f pt3(0,0, 1);
+    cv::Point3f pt11(0,0, 0);
+    src.push_back(pt1);
+    src.push_back(pt2);
+    src.push_back(pt3);
+    src.push_back(pt11);
+
+    std::vector<cv::Point3f> dst;
+    cv::Point3f pt4(2,0, 0);
+    cv::Point3f pt5(0,1, 0);
+    cv::Point3f pt6(0,0, 1);
+    cv::Point3f pt22(1,0, 0);
+    dst.push_back(pt4);
+    dst.push_back(pt5);
+    dst.push_back(pt6);
+    dst.push_back(pt22);
+
+    cv::Mat affine;
+    cv::Mat inlier;
+    cv::estimateAffine3D(src, dst, affine, inlier);
+
+    std::cout<<"the transformation is "<<std::endl;
+    std::cout<<affine<<std::endl<<std::endl;
+
 
     /// test out the Point3
     Eigen::Matrix<double, 3, 1> P_ei(3,1,1);
