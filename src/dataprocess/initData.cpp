@@ -163,20 +163,45 @@ fileReader::fileReader(std::string dataDir) {
 
 
     // read the pattern size
+    edgeLength = dataInit["Edge_length"];
+
     int width1 = dataInit["Target1_width"];
     int height1 = dataInit["Target1_height"];
     patternSize1.width = width1;
     patternSize1.height = height1;
+
+    // generate the map1
+    for (int i = 0; i < width1; ++i) {
+        for (int j = 0; j < height1 ; ++j) {
+            map1.push_back(cv::Point3d(j * edgeLength, i * edgeLength, 0));
+        }
+    }
 
     int width2 = dataInit["Target2_width"];
     int height2 = dataInit["Target2_height"];
     patternSize2.width = width2;
     patternSize2.height = height2;
 
+    // generate the map2
+    for (int i = 0; i < width2; ++i) {
+        for (int j = 0; j < height2 ; ++j) {
+            map2.push_back(cv::Point3d( j * edgeLength, i * edgeLength, 0));
+        }
+    }
+
     int width3 = dataInit["Target3_width"];
     int height3 = dataInit["Target3_height"];
     patternSize3.width = width3;
     patternSize3.height = height3;
+
+    // generate the map3
+    for (int i = 0; i < width2; ++i) {
+        for (int j = 0; j < height2 ; ++j) {
+            map3.push_back(cv::Point3d(j * edgeLength, i * edgeLength, 0));
+        }
+    }
+
+
 
 
     // read the init data file
@@ -231,4 +256,16 @@ fileReader::fileReader(std::string dataDir) {
     gtsam::Point3 P_C_zed_L_init_gt(P_C_zed_L_init);
     T_C_zed_L_init.Create(R_C_zed_L_init_gt, P_C_zed_L_init_gt);
 
+}
+
+std::vector<cv::Point3d> fileReader::get_map1() {
+    return map1;
+}
+
+std::vector<cv::Point3d> fileReader::get_map2() {
+    return map2;
+}
+
+std::vector<cv::Point3d> fileReader::get_map3() {
+    return map3;
 }

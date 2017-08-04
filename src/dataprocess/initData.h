@@ -43,6 +43,9 @@ namespace CL{
         cv::Size S_rect0, S_rect1;
 
         cv::Size patternSize1, patternSize2, patternSize3;
+        double edgeLength;
+        std::vector<cv::Point3d> map1, map2, map3;
+        std::vector<gtsam::Point3> map1_gt, map2_gt, map3_gt;
 
         /// the extrinsic calbration init in Mat formate
 
@@ -93,6 +96,11 @@ namespace CL{
         cv::Size get_patternSize2();
         cv::Size get_patternSize3();
 
+        std::vector<cv::Point3d> get_map1();
+        std::vector<cv::Point3d> get_map2();
+        std::vector<cv::Point3d> get_map3();
+
+
         Eigen::Matrix<double, 3, 3> get_R_I_L_init();
         Eigen::Matrix<double, 3, 1> get_P_I_L_init();
         Eigen::Matrix<double, 3, 3> get_R_I_C_vi_init();
@@ -103,6 +111,7 @@ namespace CL{
         Eigen::Matrix<double, 3, 1> get_P_C_zed_L_init();
         Eigen::Matrix<double, 3, 3> get_R_C_vi_L_init();
         Eigen::Matrix<double, 3, 1> get_P_C_vi_L_init();
+
 
 
         gtsam::Pose3 get_T_I_L_init();

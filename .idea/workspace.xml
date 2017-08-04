@@ -16,8 +16,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95db6d45-7df2-401c-9ff3-f44f6d8d1ca2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main_camlidar.cpp" afterPath="$PROJECT_DIR$/src/main_camlidar.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main_gtsam.cpp" afterPath="$PROJECT_DIR$/src/main_gtsam.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/3plane2/init.yaml" afterPath="$PROJECT_DIR$/data/3plane2/init.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dataprocess/initData.cpp" afterPath="$PROJECT_DIR$/src/dataprocess/initData.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dataprocess/initData.h" afterPath="$PROJECT_DIR$/src/dataprocess/initData.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,11 +34,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main_camlidar.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main_camlidar.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main_camlidar.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="38" column="33" lean-forward="false" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+            <state relative-caret-position="484">
+              <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding>
                 <element signature="e#38#62#0" expanded="true" />
               </folding>
@@ -92,8 +93,8 @@
       <file leaf-file-name="initData.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dataprocess/initData.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="93" column="36" lean-forward="false" selection-start-line="93" selection-start-column="36" selection-end-line="93" selection-end-column="36" />
+            <state relative-caret-position="374">
+              <caret line="53" column="55" lean-forward="false" selection-start-line="53" selection-start-column="55" selection-end-line="53" selection-end-column="55" />
               <folding>
                 <element signature="e#95#112#0" expanded="true" />
               </folding>
@@ -104,8 +105,8 @@
       <file leaf-file-name="init.yaml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/3plane2/init.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="936">
-              <caret line="52" column="17" lean-forward="false" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
+            <state relative-caret-position="635">
+              <caret line="56" column="17" lean-forward="true" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -121,11 +122,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="initData.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="initData.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dataprocess/initData.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="173" column="34" lean-forward="false" selection-start-line="173" selection-start-column="34" selection-end-line="173" selection-end-column="34" />
+            <state relative-caret-position="2788">
+              <caret line="244" column="61" lean-forward="true" selection-start-line="244" selection-start-column="61" selection-end-line="244" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -155,14 +156,14 @@
         <option value="$PROJECT_DIR$/src/imgrect_3p.cpp" />
         <option value="$PROJECT_DIR$/src/imgrect_vi.cpp" />
         <option value="$PROJECT_DIR$/src/imgrect_zjudata.cpp" />
-        <option value="$PROJECT_DIR$/src/dataprocess/initData.h" />
-        <option value="$PROJECT_DIR$/src/dataprocess/initData.cpp" />
-        <option value="$PROJECT_DIR$/data/3plane2/init.yaml" />
         <option value="$PROJECT_DIR$/data/3plane/init.yaml" />
         <option value="$PROJECT_DIR$/src/dataprocess/imgRect.h" />
         <option value="$PROJECT_DIR$/src/dataprocess/imgRect.cpp" />
         <option value="$PROJECT_DIR$/src/main_gtsam.cpp" />
         <option value="$PROJECT_DIR$/src/main_camlidar.cpp" />
+        <option value="$PROJECT_DIR$/data/3plane2/init.yaml" />
+        <option value="$PROJECT_DIR$/src/dataprocess/initData.h" />
+        <option value="$PROJECT_DIR$/src/dataprocess/initData.cpp" />
       </list>
     </option>
   </component>
@@ -526,12 +527,12 @@
       <option name="presentableId" value="Default" />
       <updated>1501702138854</updated>
       <workItem from="1501702141301" duration="2055000" />
-      <workItem from="1501729574265" duration="43588000" />
+      <workItem from="1501729574265" duration="45080000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45643000" />
+    <option name="totallyTimeSpent" value="47135000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1985" y="24" width="1615" height="1026" extended-state="6" />
@@ -539,7 +540,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.78125" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48706895" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -634,36 +635,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataprocess/initData.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="93" column="36" lean-forward="false" selection-start-line="93" selection-start-column="36" selection-end-line="93" selection-end-column="36" />
-          <folding>
-            <element signature="e#95#112#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataprocess/initData.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="173" column="34" lean-forward="false" selection-start-line="173" selection-start-column="34" selection-end-line="173" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/3plane/init.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="763">
           <caret line="56" column="17" lean-forward="true" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/3plane2/init.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="936">
-          <caret line="52" column="17" lean-forward="false" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -708,11 +683,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main_camlidar.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="38" column="33" lean-forward="false" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+        <state relative-caret-position="484">
+          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
             <element signature="e#38#62#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/3plane2/init.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="635">
+          <caret line="56" column="17" lean-forward="true" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dataprocess/initData.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="53" column="55" lean-forward="false" selection-start-line="53" selection-start-column="55" selection-end-line="53" selection-end-column="55" />
+          <folding>
+            <element signature="e#95#112#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dataprocess/initData.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2788">
+          <caret line="244" column="61" lean-forward="true" selection-start-line="244" selection-start-column="61" selection-end-line="244" selection-end-column="61" />
+          <folding />
         </state>
       </provider>
     </entry>
