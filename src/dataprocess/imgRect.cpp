@@ -381,14 +381,92 @@ std::vector<cv::Point3f> CL::backproject(std::vector<gtsam::StereoPoint2> target
 
 gtsam::Pose3 CL::estimateTargetPose(std::vector<cv::Point3f> P_C_f, std::vector<cv::Point3f> P_G_f) {
 
-    cv::Mat T_G_C_cv, inlier;
-    cv::estimateAffine3D(P_G_f, P_C_f, T_G_C_cv, inlier);
+
+    // cam pose estimation
+    size_t  n = P_C_f.size();
+
+    Eigen::MatrixXd dP_C_f;
+    Eigen::MatrixXd dP_G_f;
+    dP_C_f.resize(3, n+1);
+    dP_C_f.setZero();
+    dP_G_f.resize(3, n+1);
+    dP_G_f.setZero();
 
 
-    std::cout<<"The output of the transformation "<<std::endl;
-    std::cout<<T_G_C_cv<<std::endl;
+    Eigen::Vector3d avgC(0,0,0), avgG(0,0,0);
+    for (int i = 0; i < n; ++i) {
+        dP_C_f(0,i) = P_C_f[i].x;
+        dP_C_f(1,i) = P_C_f[i].y;
+        dP_C_f(2,i) = P_C_f[i].z;
+
+        dP_G_f(0,i) = P_G_f[i].x;
+        dP_G_f(1,i) = P_G_f[i].y;
+        dP_G_f(2,i) = P_G_f[i].z;
+
+    }
+    //std::cout<<"The output of the camera point "<<endl;
+    //std::cout<<P_C_f<<endl;
+
+    avgC(0) = dP_C_f.row(0).mean();
+    avgC(1) = dP_C_f.row(1).mean();
+    avgC(2) = dP_C_f.row(2).mean();
+
+    avgG(0) = dP_G_f.row(0).mean();
+    avgG(1) = dP_G_f.row(1).mean();
+    avgG(2) = dP_G_f.row(2).mean();
+
+    for (int i = 0; i < n; ++i) {
+        dP_C_f(0,i) = P_C_f[i].x - avgC(0);
+        dP_C_f(1,i) = P_C_f[i].y - avgC(1);
+        dP_C_f(2,i) = P_C_f[i].z - avgC(2);
+
+        //dP_C_f.col(i) = dP_C_f.col(i);//dP_C_f.col(i).norm();
+
+        dP_G_f(0,i) = P_G_f[i].x - avgG(0);
+        dP_G_f(1,i) = P_G_f[i].y - avgG(1);
+        dP_G_f(2,i) = P_G_f[i].z - avgG(2);
+
+        //dP_G_f.col(i) = dP_G_f.col(i);//dP_G_f.col(i).norm();
+    }
+
+    Eigen::JacobiSVD<Eigen::MatrixXd> svd( dP_C_f.transpose(), Eigen::ComputeFullV | Eigen::ComputeThinU );
+    dP_C_f.block(0,n,3, 1) = (svd.matrixV()).block(0,2,3,1);
+    dP_G_f.block(0,n,3,1) << 0, 0, 1;
+
+
+    std::cout<<dP_C_f.block(0,n,3,1).transpose() * dP_C_f<<endl;
+    Eigen::Matrix<double, 3, 3> R = (dP_G_f * dP_C_f.transpose()) * (dP_C_f * dP_C_f.transpose()).inverse() ;
+    Eigen::JacobiSVD<Eigen::MatrixXd> svdR (R, Eigen::ComputeFullV | Eigen::ComputeThinU );
+    R = svdR.matrixU() * (svdR.matrixV()).transpose();
+
+
+    // compute the translation
+    Eigen::Vector3d avgP;
+    avgP.setZero();
+    for (int j = 0; j < n; ++j) {
+        avgP = avgP + dP_G_f.block(0, j, 3, 1) + avgG  - R * (dP_C_f.block(0,j,3, 1)+ avgC);
+    }
+
+    avgP = avgP/n;
+    //std::cout<<svd.singularValues();
+
+
+    //std::cout<<"R"<<endl;
+    //std::cout<<R<<endl;
+    //std::cout<<"P"<<endl;
+    //std::cout<<avgP.transpose()<<endl;
+    //std::cout<<R*R.transpose()<<endl;
+
+
+    //cv::Mat T_G_C_cv, inlier;
+    //cv::estimateAffine3D(P_C_f, P_G_f, T_G_C_cv, inlier);
+
+
+    //std::cout<<"The output of the transformation "<<std::endl;
+    //std::cout<<T_G_C_cv<<std::endl;
     //std::cout<<inlier<<std::endl;
 
+    /*
     Eigen::Matrix<double, 3, 4> T_G_C_eigen;
     cv::cv2eigen(T_G_C_cv, T_G_C_eigen);
     gtsam::Vector3 vec1 = T_G_C_eigen.block(0,0,3,1);
@@ -396,19 +474,13 @@ gtsam::Pose3 CL::estimateTargetPose(std::vector<cv::Point3f> P_C_f, std::vector<
     gtsam::Vector3 vec3 = vec1.cross(vec2);
 
     T_G_C_eigen.block(0,2,3,1) = vec3;
+    */
 
-    std::cout<<"Test"<<endl;
-    std::cout<<T_G_C_eigen.block(0,0,3,3) * T_G_C_eigen.block(0,0,3,3).transpose()<<endl;
+    //gtsam::Rot3 R_G_C(T_G_C_eigen.block(0,0,3,3));
+    //gtsam::Point3 P_G_C(T_G_C_eigen.block(0,3,3,1));
 
-    std::cout<<"Test 1"<<endl;
-    Eigen::Vector3d vec11(P_C_f[1].x, P_C_f[1].y,P_C_f[1].z);
-    Eigen::Vector3d vec12(P_C_f[7].x, P_C_f[7].y,P_C_f[7].z);
-    Eigen::Vector3d vec13 = vec11.cross(vec12);
-    Eigen::Matrix<double, 3, 3> R;
-    //R.block()
-
-    gtsam::Rot3 R_G_C(T_G_C_eigen.block(0,0,3,3));
-    gtsam::Point3 P_G_C(T_G_C_eigen.block(0,3,3,1));
+    gtsam::Rot3 R_G_C(R);
+    gtsam::Point3 P_G_C(avgP);
 
     gtsam::Pose3 T_G_C(R_G_C, P_G_C);
 

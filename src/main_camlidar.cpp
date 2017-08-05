@@ -45,6 +45,7 @@ int main( int argc, char** argv ){
                                     fReader.get_fx(), fReader.get_fy(), fReader.get_px(),fReader.get_py(),
                                     fReader.get_baseline(),
                                     fReader.get_map1());
+
     T_G2_C = CL::getTargetPose(chessCorner2,
                                     fReader.get_fx(), fReader.get_fy(), fReader.get_px(),fReader.get_py(),
                                     fReader.get_baseline(),
@@ -53,6 +54,9 @@ int main( int argc, char** argv ){
                                     fReader.get_fx(), fReader.get_fy(), fReader.get_px(),fReader.get_py(),
                                     fReader.get_baseline(),
                                     fReader.get_map3());
+
+
+
 
     std::cout<<"The chessboard 1 Pose "<<std::endl;
     std::cout<<T_G1_C<<std::endl;
@@ -64,6 +68,7 @@ int main( int argc, char** argv ){
 
 
     // check the detection
+    /*
     std::cout<<"Chessboard 1: "<<std::endl;
     for (int i = 0; i < chessCorner1.size(); ++i) {
         std::cout<<"The detection is "<<i<<"  ";
@@ -76,7 +81,7 @@ int main( int argc, char** argv ){
         std::cout<<"The detection is "<<i<<"  ";
         std::cout<<chessCorner2[i]<<std::endl;
     }
-
+    */
 
 
 
