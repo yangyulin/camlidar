@@ -180,9 +180,9 @@ fileReader::fileReader(std::string dataDir) {
     patternSize1.height = height1;
 
     // generate the map1
-    for (int i = 0; i < width1; ++i) {
-        for (int j = 0; j < height1 ; ++j) {
-            map1.push_back(cv::Point3f(j * edgeLength, i * edgeLength, 0));
+    for (int i = 0; i < height1; ++i) {
+        for (int j = 0; j < width1 ; ++j) {
+            map1.push_back(cv::Point3f(i * edgeLength, j * edgeLength, 0));
         }
     }
 
@@ -192,9 +192,9 @@ fileReader::fileReader(std::string dataDir) {
     patternSize2.height = height2;
 
     // generate the map2
-    for (int i = 0; i < width2; ++i) {
-        for (int j = 0; j < height2 ; ++j) {
-            map2.push_back(cv::Point3f( j * edgeLength, i * edgeLength, 0));
+    for (int i = 0; i < height2; ++i) {
+        for (int j = 0; j < width2 ; ++j) {
+            map2.push_back(cv::Point3f(i * edgeLength, j * edgeLength, 0));
         }
     }
 
@@ -204,9 +204,9 @@ fileReader::fileReader(std::string dataDir) {
     patternSize3.height = height3;
 
     // generate the map3
-    for (int i = 0; i < width2; ++i) {
-        for (int j = 0; j < height2 ; ++j) {
-            map3.push_back(cv::Point3f(j * edgeLength, i * edgeLength, 0));
+    for (int i = 0; i < height3; ++i) {
+        for (int j = 0; j < width3 ; ++j) {
+            map3.push_back(cv::Point3f(i * edgeLength, j * edgeLength, 0));
         }
     }
 

@@ -54,7 +54,12 @@ int main( int argc, char** argv ){
                                     fReader.get_baseline(),
                                     fReader.get_map3());
 
-
+    std::cout<<"The chessboard 1 Pose "<<std::endl;
+    std::cout<<T_G1_C<<std::endl;
+    std::cout<<"The chessboard 2 Pose "<<std::endl;
+    std::cout<<T_G2_C<<std::endl;
+    std::cout<<"The chessboard 3 Pose "<<std::endl;
+    std::cout<<T_G3_C<<std::endl;
 
 
 
@@ -63,12 +68,15 @@ int main( int argc, char** argv ){
     for (int i = 0; i < chessCorner1.size(); ++i) {
         std::cout<<"The detection is "<<i<<"  ";
         std::cout<<chessCorner1[i]<<std::endl;
+        std::cout<<"The map is " <<endl;
+        std::cout<<fReader.get_map1()[i]<<std::endl;
     }
     std::cout<<"Chessboard 2: "<<std::endl;
     for (int i = 0; i < chessCorner2.size(); ++i) {
         std::cout<<"The detection is "<<i<<"  ";
         std::cout<<chessCorner2[i]<<std::endl;
     }
+
 
 
 

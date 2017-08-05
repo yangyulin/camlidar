@@ -384,8 +384,28 @@ gtsam::Pose3 CL::estimateTargetPose(std::vector<cv::Point3f> P_C_f, std::vector<
     cv::Mat T_G_C_cv, inlier;
     cv::estimateAffine3D(P_G_f, P_C_f, T_G_C_cv, inlier);
 
+
+    std::cout<<"The output of the transformation "<<std::endl;
+    std::cout<<T_G_C_cv<<std::endl;
+    //std::cout<<inlier<<std::endl;
+
     Eigen::Matrix<double, 3, 4> T_G_C_eigen;
     cv::cv2eigen(T_G_C_cv, T_G_C_eigen);
+    gtsam::Vector3 vec1 = T_G_C_eigen.block(0,0,3,1);
+    gtsam::Vector3 vec2 = T_G_C_eigen.block(0,1,3,1);
+    gtsam::Vector3 vec3 = vec1.cross(vec2);
+
+    T_G_C_eigen.block(0,2,3,1) = vec3;
+
+    std::cout<<"Test"<<endl;
+    std::cout<<T_G_C_eigen.block(0,0,3,3) * T_G_C_eigen.block(0,0,3,3).transpose()<<endl;
+
+    std::cout<<"Test 1"<<endl;
+    Eigen::Vector3d vec11(P_C_f[1].x, P_C_f[1].y,P_C_f[1].z);
+    Eigen::Vector3d vec12(P_C_f[7].x, P_C_f[7].y,P_C_f[7].z);
+    Eigen::Vector3d vec13 = vec11.cross(vec12);
+    Eigen::Matrix<double, 3, 3> R;
+    //R.block()
 
     gtsam::Rot3 R_G_C(T_G_C_eigen.block(0,0,3,3));
     gtsam::Point3 P_G_C(T_G_C_eigen.block(0,3,3,1));
