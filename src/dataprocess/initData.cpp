@@ -161,6 +161,15 @@ fileReader::fileReader(std::string dataDir) {
     dataCalibRight["rectification_matrix"] >> R_rect1;
     dataCalibRight["projection_matrix"] >> P_rect1;
 
+    Eigen::Matrix<double, 3, 4> Projection_L;
+    Eigen::Matrix<double, 3, 4> Projection_R;
+    cv::cv2eigen(P_rect0, Projection_L);
+    cv::cv2eigen(P_rect1, Projection_R);
+    fx = Projection_R(0,0);
+    fy = Projection_R(1,1);
+    px = Projection_L(0,2);
+    py = Projection_R(1,2);
+    baseline = - Projection_R(0,3) / fx;
 
     // read the pattern size
     edgeLength = dataInit["Edge_length"];
@@ -173,7 +182,7 @@ fileReader::fileReader(std::string dataDir) {
     // generate the map1
     for (int i = 0; i < width1; ++i) {
         for (int j = 0; j < height1 ; ++j) {
-            map1.push_back(cv::Point3d(j * edgeLength, i * edgeLength, 0));
+            map1.push_back(cv::Point3f(j * edgeLength, i * edgeLength, 0));
         }
     }
 
@@ -185,7 +194,7 @@ fileReader::fileReader(std::string dataDir) {
     // generate the map2
     for (int i = 0; i < width2; ++i) {
         for (int j = 0; j < height2 ; ++j) {
-            map2.push_back(cv::Point3d( j * edgeLength, i * edgeLength, 0));
+            map2.push_back(cv::Point3f( j * edgeLength, i * edgeLength, 0));
         }
     }
 
@@ -197,7 +206,7 @@ fileReader::fileReader(std::string dataDir) {
     // generate the map3
     for (int i = 0; i < width2; ++i) {
         for (int j = 0; j < height2 ; ++j) {
-            map3.push_back(cv::Point3d(j * edgeLength, i * edgeLength, 0));
+            map3.push_back(cv::Point3f(j * edgeLength, i * edgeLength, 0));
         }
     }
 
@@ -258,14 +267,34 @@ fileReader::fileReader(std::string dataDir) {
 
 }
 
-std::vector<cv::Point3d> fileReader::get_map1() {
+std::vector<cv::Point3f> fileReader::get_map1() {
     return map1;
 }
 
-std::vector<cv::Point3d> fileReader::get_map2() {
+std::vector<cv::Point3f> fileReader::get_map2() {
     return map2;
 }
 
-std::vector<cv::Point3d> fileReader::get_map3() {
+std::vector<cv::Point3f> fileReader::get_map3() {
     return map3;
+}
+
+double fileReader::get_fx() {
+    return fx;
+}
+
+double fileReader::get_fy() {
+    return fy;
+}
+
+double fileReader::get_px() {
+    return px;
+}
+
+double fileReader::get_py() {
+    return py;
+}
+
+double fileReader::get_baseline() {
+    return baseline;
 }

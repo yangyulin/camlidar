@@ -36,6 +36,8 @@ namespace CL{
         std::string dataDir;
 
         /// stereo calibration data
+        double fx, fy, px, py, baseline;
+
 
         cv::Mat K_0, D_0, R_rect0, P_rect0;
         cv::Mat K_1, D_1, R_rect1, P_rect1;
@@ -43,8 +45,8 @@ namespace CL{
         cv::Size S_rect0, S_rect1;
 
         cv::Size patternSize1, patternSize2, patternSize3;
-        double edgeLength;
-        std::vector<cv::Point3d> map1, map2, map3;
+        float edgeLength;
+        std::vector<cv::Point3f> map1, map2, map3;
         std::vector<gtsam::Point3> map1_gt, map2_gt, map3_gt;
 
         /// the extrinsic calbration init in Mat formate
@@ -96,9 +98,9 @@ namespace CL{
         cv::Size get_patternSize2();
         cv::Size get_patternSize3();
 
-        std::vector<cv::Point3d> get_map1();
-        std::vector<cv::Point3d> get_map2();
-        std::vector<cv::Point3d> get_map3();
+        std::vector<cv::Point3f> get_map1();
+        std::vector<cv::Point3f> get_map2();
+        std::vector<cv::Point3f> get_map3();
 
 
         Eigen::Matrix<double, 3, 3> get_R_I_L_init();
@@ -119,6 +121,12 @@ namespace CL{
         gtsam::Pose3 get_T_I_C_zed_init();
         gtsam::Pose3 get_T_C_zed_L_init();
         gtsam::Pose3 get_T_C_vi_L_init();
+
+        double get_fx();
+        double get_fy();
+        double get_px();
+        double get_py();
+        double get_baseline();
 
     };
 

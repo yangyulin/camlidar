@@ -31,12 +31,30 @@ int main( int argc, char** argv ){
 
     CL::showRect(imgNameL, imgNameR, matLrect, matRrect, true);
 
+    std::vector<cv::Point3f> cvchessCorner1, cvchessCorner2, cvchessCorner3;
+
     std::vector<gtsam::StereoPoint2> chessCorner1 = CL::detectChessboard1(matLrect, matRrect,
-                                                              fReader.get_patternSize1());
+                                                              fReader.get_patternSize1(), cvchessCorner1);
     std::vector<gtsam::StereoPoint2> chessCorner2 = CL::detectChessboard2(matLrect, matRrect,
-                                                              fReader.get_patternSize2());
+                                                              fReader.get_patternSize2(), cvchessCorner2);
     std::vector<gtsam::StereoPoint2> chessCorner3 = CL::detectChessboard3(matLrect, matRrect,
-                                                              fReader.get_patternSize3());
+                                                              fReader.get_patternSize3(), cvchessCorner3);
+
+    gtsam::Pose3 T_G1_C, T_G2_C, T_G3_C;
+    T_G1_C = CL::getTargetPose(chessCorner1,
+                                    fReader.get_fx(), fReader.get_fy(), fReader.get_px(),fReader.get_py(),
+                                    fReader.get_baseline(),
+                                    fReader.get_map1());
+    T_G2_C = CL::getTargetPose(chessCorner2,
+                                    fReader.get_fx(), fReader.get_fy(), fReader.get_px(),fReader.get_py(),
+                                    fReader.get_baseline(),
+                                    fReader.get_map2());
+    T_G3_C = CL::getTargetPose(chessCorner3,
+                                    fReader.get_fx(), fReader.get_fy(), fReader.get_px(),fReader.get_py(),
+                                    fReader.get_baseline(),
+                                    fReader.get_map3());
+
+
 
 
 

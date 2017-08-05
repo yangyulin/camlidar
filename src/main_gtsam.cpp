@@ -37,6 +37,10 @@ using namespace gtsam;
 
 int main(int argc, char** argv){
 
+
+    cv::Mat C = (cv::Mat_<double>(2,2) << 0, -1, 0, -1);
+
+
     /// test the affine3D
     std::vector<cv::Point3f> src;
     cv::Point3f pt1(1,0, 0);

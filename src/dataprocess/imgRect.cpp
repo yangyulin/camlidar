@@ -109,7 +109,8 @@ std::vector<gtsam::StereoPoint2> CL::detectChessboard( cv::Mat matLrect,
 
 std::vector<gtsam::StereoPoint2> CL::detectChessboard1(cv::Mat matLrect,
                                                         cv::Mat matRrect,
-                                                       cv::Size patternSize1){
+                                                       cv::Size patternSize1,
+                                                       std::vector<cv::Point3f> cvdetectChessboard1){
     // prepare the output vector
     std::vector<gtsam::StereoPoint2> targetCorner;
     std::vector<cv::Point2f> chessBoardL1;
@@ -169,10 +170,11 @@ std::vector<gtsam::StereoPoint2> CL::detectChessboard1(cv::Mat matLrect,
 
     // store the stereo keypoints and output
     for (int j = 0; j < chessBoardL1.size() ; ++j) {
-        double u1 = chessBoardL1[j].x;
-        double u2 = chessBoardR1[j].x;
-        double v1 = chessBoardL1[j].y;
+        float u1 = chessBoardL1[j].x;
+        float u2 = chessBoardR1[j].x;
+        float v1 = chessBoardL1[j].y;
         targetCorner.push_back(gtsam::StereoPoint2(u1,u2,v1));
+        cvdetectChessboard1.push_back(cv::Point3f(u1,u2,v1));
     }
 
     return targetCorner;
@@ -181,7 +183,8 @@ std::vector<gtsam::StereoPoint2> CL::detectChessboard1(cv::Mat matLrect,
 
 std::vector<gtsam::StereoPoint2> CL::detectChessboard2(cv::Mat matLrect,
                                                         cv::Mat matRrect,
-                                                       cv::Size patternSize2){
+                                                       cv::Size patternSize2,
+                                                       std::vector<cv::Point3f> cvdetectChessboard2){
 
 
     // prepare the output vector
@@ -252,10 +255,11 @@ std::vector<gtsam::StereoPoint2> CL::detectChessboard2(cv::Mat matLrect,
 
     // store the stereo keypoints and output
     for (int j = 0; j < chessBoardL2.size() ; ++j) {
-        double u1 = chessBoardL2[j].x;
-        double u2 = chessBoardR2[j].x;
-        double v1 = chessBoardL2[j].y;
+        float u1 = chessBoardL2[j].x;
+        float u2 = chessBoardR2[j].x;
+        float v1 = chessBoardL2[j].y;
         targetCorner.push_back(gtsam::StereoPoint2(u1,u2,v1));
+        cvdetectChessboard2.push_back(cv::Point3f(u1,u2,v1));
     }
 
     return targetCorner;
@@ -265,7 +269,8 @@ std::vector<gtsam::StereoPoint2> CL::detectChessboard2(cv::Mat matLrect,
 
 std::vector<gtsam::StereoPoint2> CL::detectChessboard3(cv::Mat matLrect,
                                                         cv::Mat matRrect,
-                                                        cv::Size patternSize3){
+                                                        cv::Size patternSize3,
+                                                       std::vector<cv::Point3f> cvdetectChessboard3){
 
 
 
@@ -337,13 +342,68 @@ std::vector<gtsam::StereoPoint2> CL::detectChessboard3(cv::Mat matLrect,
 
     // store the stereo keypoints and output
     for (int j = 0; j < chessBoardL3.size() ; ++j) {
-        double u1 = chessBoardL3[j].x;
-        double u2 = chessBoardR3[j].x;
-        double v1 = chessBoardL3[j].y;
+        float u1 = chessBoardL3[j].x;
+        float u2 = chessBoardR3[j].x;
+        float v1 = chessBoardL3[j].y;
         targetCorner.push_back(gtsam::StereoPoint2(u1,u2,v1));
+        cvdetectChessboard3.push_back(cv::Point3f(u1,u2,v1));
     }
 
     return targetCorner;
 
 
+}
+
+std::vector<cv::Point3f> CL::backproject(std::vector<gtsam::StereoPoint2> targetCorner,
+                                        double fx, double fy, double px, double py, double baseline){
+    std::vector<cv::Point3f> P_C_f;
+    size_t psz = targetCorner.size();
+    for (int i = 0; i < psz; ++i) {
+        double u1 = targetCorner[i].uL();
+        double u2 = targetCorner[i].uR();
+        double v = targetCorner[i].v();
+
+        double u1n = (u1 - px) / fx;
+        double u2n = (u2 - px) / fx;
+        double vn = (v - py) / fy;
+
+        double z = baseline * fx / (u1 - u2);
+        double x = z * (u1 - px) / fx;
+        double y = z * (v - py) / fy;
+
+        P_C_f.push_back(cv::Point3f(x,y,z));
+    }
+
+
+    return P_C_f;
+
+}
+
+gtsam::Pose3 CL::estimateTargetPose(std::vector<cv::Point3f> P_C_f, std::vector<cv::Point3f> P_G_f) {
+
+    cv::Mat T_G_C_cv, inlier;
+    cv::estimateAffine3D(P_G_f, P_C_f, T_G_C_cv, inlier);
+
+    Eigen::Matrix<double, 3, 4> T_G_C_eigen;
+    cv::cv2eigen(T_G_C_cv, T_G_C_eigen);
+
+    gtsam::Rot3 R_G_C(T_G_C_eigen.block(0,0,3,3));
+    gtsam::Point3 P_G_C(T_G_C_eigen.block(0,3,3,1));
+
+    gtsam::Pose3 T_G_C(R_G_C, P_G_C);
+
+
+
+    return T_G_C;
+}
+
+gtsam::Pose3 CL::getTargetPose(std::vector<gtsam::StereoPoint2> targetCorner,
+                           double fx, double fy, double px, double py,
+                           double baseline, std::vector<cv::Point3f> P_G_f) {
+    std::vector<cv::Point3f> P_C_f;
+    P_C_f = CL::backproject(targetCorner, fx, fy, px, py, baseline);
+
+    gtsam::Pose3 T_G_C = CL::estimateTargetPose(P_C_f, P_G_f);
+
+    return T_G_C;
 }
