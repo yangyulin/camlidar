@@ -45,7 +45,7 @@ INCLUDE_DIRECTORIES(${CHOLMOD_INCLUDE_DIR}
                     include)
 
 ADD_EXECUTABLE( main_camlidar
-        src/main_camlidar.cpp src/dataprocess/initData.h src/dataprocess/initData.cpp src/dataprocess/imgRect.h src/dataprocess/imgRect.cpp)
+        src/main_camlidar.cpp src/dataprocess/initData.h src/dataprocess/initData.cpp src/dataprocess/imgRect.h src/dataprocess/imgRect.cpp src/dataprocess/pclProc.cpp src/dataprocess/pclProc.h)
 
 TARGET_LINK_LIBRARIES(  main_camlidar
         gtsam

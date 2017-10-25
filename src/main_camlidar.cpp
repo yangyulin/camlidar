@@ -7,6 +7,10 @@
 #include "dataprocess/initData.h"
 #include "dataprocess/imgRect.h"
 
+#include <iostream>
+#include <pcl/io/pcd_io.h>
+#include <pcl/point_types.h>
+
 using namespace cv;
 using namespace std;
 
@@ -40,6 +44,10 @@ int main( int argc, char** argv ){
     std::vector<gtsam::StereoPoint2> chessCorner3 = CL::detectChessboard3(matLrect, matRrect,
                                                               fReader.get_patternSize3(), cvchessCorner3);
 
+    //std::cout<<"chesssboard 1"<<endl;
+    //std::cout<<cvchessCorner1<<endl;
+
+
     gtsam::Pose3 T_G1_C, T_G2_C, T_G3_C;
     T_G1_C = CL::getTargetPose(chessCorner1,
                                     fReader.get_fx(), fReader.get_fy(), fReader.get_px(),fReader.get_py(),
@@ -54,6 +62,24 @@ int main( int argc, char** argv ){
                                     fReader.get_fx(), fReader.get_fy(), fReader.get_px(),fReader.get_py(),
                                     fReader.get_baseline(),
                                     fReader.get_map3());
+
+
+    // load the point cloud to test the algorithm first
+    pcl::PointCloud<pcl::PointXYZI>::Ptr cloud0 (new pcl::PointCloud<pcl::PointXYZI>);
+    pcl::PointCloud<pcl::PointXYZI>::Ptr cloud1 (new pcl::PointCloud<pcl::PointXYZI>);
+    pcl::PointCloud<pcl::PointXYZI>::Ptr cloud2 (new pcl::PointCloud<pcl::PointXYZI>);
+    pcl::PointCloud<pcl::PointXYZI>::Ptr cloud3 (new pcl::PointCloud<pcl::PointXYZI>);
+    pcl::io::loadPCDFile<pcl::PointXYZI> ("/home/linde/data/Project/camlidar/data/3plane2/plane0000.pcd", *cloud0);
+    pcl::io::loadPCDFile<pcl::PointXYZI> ("/home/linde/data/Project/camlidar/data/3plane2/plane0001.pcd", *cloud1);
+    pcl::io::loadPCDFile<pcl::PointXYZI> ("/home/linde/data/Project/camlidar/data/3plane2/plane0002.pcd", *cloud2);
+    //std::cout<<"Point 1"<<endl;
+    //std::cout<<cloud1->getMatrixXfMap()<<endl;
+    *cloud3 = *cloud3 + * cloud0;
+    *cloud3 = *cloud3 + * cloud1;
+    *cloud3 = *cloud3 + * cloud2;
+    pcl::io::savePCDFileASCII ("/home/linde/data/Project/camlidar/data/3plane2/test.pcd", *cloud3);
+
+    // Now we have everything, And we can build the graph now.
 
 
 

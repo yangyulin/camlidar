@@ -5,4 +5,19 @@
 #ifndef CAMLIDAR_PCLPROC_H
 #define CAMLIDAR_PCLPROC_H
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #endif //CAMLIDAR_PCLPROC_H

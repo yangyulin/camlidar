@@ -173,6 +173,7 @@ std::vector<gtsam::StereoPoint2> CL::detectChessboard1(cv::Mat matLrect,
         float u1 = chessBoardL1[j].x;
         float u2 = chessBoardR1[j].x;
         float v1 = chessBoardL1[j].y;
+        //std::cout<<u1<<","<<u2<<","<<v1<<std::endl;
         targetCorner.push_back(gtsam::StereoPoint2(u1,u2,v1));
         cvdetectChessboard1.push_back(cv::Point3f(u1,u2,v1));
     }
@@ -306,6 +307,8 @@ std::vector<gtsam::StereoPoint2> CL::detectChessboard3(cv::Mat matLrect,
     cv::Size szR = matRrect.size();
     cv::Mat imgR(matRrect, cv::Rect(szL.width/2,0, szR.width/2, szR.height));
 
+    ///https://github.com/opencv/opencv/blob/master/modules/calib3d/src/calibinit.cpp
+    // check the source code to design much better resutls for the corner detection
     bool TARGET_R3 = cv::findChessboardCorners(imgR,
                                                patternSize3,
                                                chessBoardR3,
